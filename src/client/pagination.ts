@@ -1,20 +1,11 @@
+// class for pagination
 export class Pagination<T> {
-  private items: T[];
-  private itemsPerPage: number;
   private currentPage: number;
   private totalPages: number;
 
-  constructor(items: T[], itemsPerPage: number) {
-    this.items = items;
-    this.itemsPerPage = itemsPerPage;
-    this.currentPage = 0;
-    this.totalPages = Math.ceil(items.length / itemsPerPage);
-  }
-
-  public getItems(): T[] {
-    const startIndex = this.currentPage * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    return this.items.slice(startIndex, endIndex);
+  constructor(totalPages: number) {
+    this.currentPage = 1;
+    this.totalPages = totalPages;
   }
 
   public getPageCount(): number {
@@ -39,7 +30,7 @@ export class Pagination<T> {
   }
 
   public previousPage(): void {
-    if (this.currentPage > 0) {
+    if (this.currentPage > 1) {
       this.currentPage--;
     }
   }
@@ -50,5 +41,11 @@ export class Pagination<T> {
 
   public lastPage(): void {
     this.currentPage = this.totalPages - 1;
+  }
+
+  // на будущее, для кнопок с номером страницы (я передумал это делать, мне лень)
+  public updateButtons(): void {
+    const pageButtons = document.getElementById('page-buttons') as HTMLDivElement;
+    pageButtons.innerHTML = '';
   }
 }

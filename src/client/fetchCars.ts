@@ -1,5 +1,9 @@
-export async function fetchCars(): Promise<any[]> {
-  const response = await fetch('/cars.json');
+// function for fetching data from api
+export async function fetchCars(curPage: number, perPage: number): Promise<any[]> {
+  // adding query params
+  const urn: string = `/cars.json?curPage=${curPage}&perPage=${perPage}`
+  // fetching
+  const response = await fetch(urn);
   const data = await response.json();
-  return data['cars'];
+  return data;
 }

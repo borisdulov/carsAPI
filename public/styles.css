@@ -1,0 +1,68 @@
+body {
+  background-color: #e3d5ca;
+  margin: 0;
+}
+
+#pagination button {
+  background-color: #f4a261;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #e76f51;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+#pagination button:hover, #pagination button:active {
+  box-shadow: 0 0 10px #663a20af;
+  -webkit-transform: scale(1,1);
+  transform: scale(1.1);
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: #e76f51;
+  padding: 24px;
+}
+
+#pagination #cur-page {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: white;
+}
+
+#list-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  background-color: #f5ebe0;
+  margin: 48px;
+  border-radius: 5px;
+  box-shadow: 0 0 12px #00000039;
+  padding: 0;
+}
+
+#list-container div {
+  border-bottom: 1px #c9ada7 solid;
+  padding: 12px;
+  padding-left: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #22223b;
+}
+
+
+

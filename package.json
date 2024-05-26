@@ -9,9 +9,9 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun build src/client/app.ts --watch --outfile dist/app.js & nodemon src/server/app.ts",
+    "start": "bun b & nodemon src/server/app.ts",
     "s": "bun start",
-    "build": "bun build src/client/app.ts --watch --outfile dist/app.js"
+    "b": "bun build src/client/app.ts --watch --outdir dist/"
   },
   "dependencies": {
     "bun-types": "^1.1.10",
